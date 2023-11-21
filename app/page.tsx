@@ -41,7 +41,7 @@ export default function Home() {
             Invoice
           </h1>
 
-          <div className="text-center text-xs bg-blue-200 rounded-full w-24 h-24 flex items-center">
+          <div className="text-center text-xs bg-gradient-to-tl from-green-200 to-blue-200 rounded-full w-24 h-24 flex items-center">
             <p>Your logo here!</p>
           </div>
         </section>

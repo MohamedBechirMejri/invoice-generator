@@ -37,7 +37,7 @@ export default function Home() {
         {/* Header Section */}
         <section className="grid grid-cols-[1fr,auto,1fr] gap-8">
           <div></div>
-          <h1 className="text-7xl font-bold" style={loveYaLikeASister.style}>
+          <h1 className="text-7xl font-bold mt-8" style={loveYaLikeASister.style}>
             Invoice
           </h1>
 
@@ -45,6 +45,8 @@ export default function Home() {
             <p>Your logo here!</p>
           </div>
         </section>
+
+        <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-2 rounded mt-6 mb-4" />
 
         {/* Billing Section */}
         <section className="my-6">

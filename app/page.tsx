@@ -1,12 +1,14 @@
+// TODO: allow user to tweak positions
+
 export default function Home() {
   return (
     <div className="grid grid-cols-[7rem,35rem] h-max border w-max">
-      <header className="relative bg-gradient-to-tl from-pink-200 to-blue-200">
-        <div className="absolute w-max -rotate-90 right-[-4rem] top-32 font-semibold text-base font-mono">
+      <header className="relative bg-gradient-to-tl from-pink-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
+        <div className="min-w-max -rotate-90 font-semibold text-base font-mono">
           <p>NO. 123</p>
           <p>Issued on September 1, 2021</p>
         </div>
-        <div className="absolute w-max -rotate-90 right-[-6.25rem] bottom-[10rem] font-[500] text-base font-mono">
+        <div className="min-w-max -rotate-90 font-[500] text-base font-mono">
           <p>www.content.com • (123) 456-7890</p>
           <p>500 main street, brooklym, NY 11211</p>
         </div>

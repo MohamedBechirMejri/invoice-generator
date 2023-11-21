@@ -33,7 +33,7 @@ export default function Home() {
           <p>500 main street, brooklym, NY 11211</p>
         </div>
       </header>
-      <main className="flex flex-col justify-between h-screen p-8 bg-[#fffffe]">
+      <main className="flex flex-col justify-between min-h-screen p-8 bg-[#fffffe]">
         {/* Header Section */}
         <section className="grid grid-cols-[1fr,auto,1fr] gap-8">
           <div></div>
@@ -58,7 +58,7 @@ export default function Home() {
         </section>
 
         {/* Description Section */}
-        <section>
+        <section className="py-6">
           <h3 className="text-lg font-bold">DESCRIPTION OF ITEM</h3>
           <div className="flex justify-between">
             <p>1 IGTV Video</p>

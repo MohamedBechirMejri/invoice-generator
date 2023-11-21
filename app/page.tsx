@@ -37,7 +37,10 @@ export default function Home() {
         {/* Header Section */}
         <section className="grid grid-cols-[1fr,auto,1fr] gap-8">
           <div></div>
-          <h1 className="text-7xl font-bold mt-8" style={loveYaLikeASister.style}>
+          <h1
+            className="text-7xl font-bold mt-8"
+            style={loveYaLikeASister.style}
+          >
             Invoice
           </h1>
 
@@ -51,7 +54,9 @@ export default function Home() {
         {/* Billing Section */}
         <section className="my-4 text-xs">
           <h2 className="text-lg font-semibold mb-2">BILLED TO</h2>
-          <p className="font-semibold text-3xl uppercase tracking-wider">Mrs. Client</p>
+          <p className="font-semibold text-3xl uppercase tracking-wider">
+            Mrs. Client
+          </p>
           <p>(123) 456-7890</p>
           <p>client@mail.com</p>
           <p>100 Fifth Avenue, New York, NY 10023</p>
@@ -59,7 +64,10 @@ export default function Home() {
 
         {/* Description Section */}
         <section className="py-6">
-          <h3 className="text-lg font-bold">DESCRIPTION OF ITEM</h3>
+          <h3 className="text-lg font-bold flex justify-between">
+            <span>DESCRIPTION OF ITEM</span> <span>PRICE</span>
+          </h3>
+          <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-1 rounded my-2" />
           <div className="flex justify-between">
             <p>1 IGTV Video</p>
             <p>$1,000</p>

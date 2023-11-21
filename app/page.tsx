@@ -49,8 +49,8 @@ export default function Home() {
         <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-2 rounded mt-6 mb-4" />
 
         {/* Billing Section */}
-        <section className="my-6 text-xs">
-          <h2 className="text-lg font-semibold -mb-1">BILLED TO</h2>
+        <section className="my-4 text-xs">
+          <h2 className="text-lg font-semibold mb-2">BILLED TO</h2>
           <p className="font-semibold text-3xl uppercase tracking-wider">Mrs. Client</p>
           <p>(123) 456-7890</p>
           <p>client@mail.com</p>

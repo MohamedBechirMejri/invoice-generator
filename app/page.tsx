@@ -1,14 +1,26 @@
 // TODO: allow user to tweak positions
 
+import { Fira_Code, Puppies_Play } from "next/font/google";
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+const puppiesPlay = Puppies_Play({ weight: "400", subsets: ["latin"] });
+
 export default function Home() {
   return (
-    <div className="grid grid-cols-[7rem,35rem] h-max border w-max">
+    <div
+      className="grid grid-cols-[7rem,35rem] h-max border w-max"
+      style={firaCode.style}
+    >
       <header className="relative bg-gradient-to-tl from-pink-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
-        <div className="min-w-max -rotate-90 font-semibold text-base font-mono">
+        <div className="min-w-max -rotate-90 font-semibold text-base text-right">
           <p>NO. 123</p>
           <p>Issued on September 1, 2021</p>
         </div>
-        <div className="min-w-max -rotate-90 font-[500] text-base font-mono">
+        <div className="min-w-max -rotate-90 font-[400] text-base uppercase">
           <p>www.content.com • (123) 456-7890</p>
           <p>500 main street, brooklym, NY 11211</p>
         </div>
@@ -68,9 +80,11 @@ export default function Home() {
         </section>
 
         {/* Footer Section */}
-        <footer className="text-center">
-          <p>*DUE BY OCTOBER 1, 2021</p>
-          <p>Thank you!</p>
+        <footer className="text-center flex items-center justify-between w-full">
+          <p className="font-medium">*DUE BY OCTOBER 1, 2021</p>
+          <p style={puppiesPlay.style} className="text-7xl">
+            Thank you!
+          </p>
         </footer>
       </main>
     </div>

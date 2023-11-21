@@ -1,6 +1,10 @@
 // TODO: allow user to tweak positions
 
-import { Fira_Code, Puppies_Play } from "next/font/google";
+import {
+  Fira_Code,
+  Puppies_Play,
+  Love_Ya_Like_A_Sister,
+} from "next/font/google";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -8,6 +12,10 @@ const firaCode = Fira_Code({
   display: "swap",
 });
 const puppiesPlay = Puppies_Play({ weight: "400", subsets: ["latin"] });
+const loveYaLikeASister = Love_Ya_Like_A_Sister({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function Home() {
   return (
@@ -27,12 +35,14 @@ export default function Home() {
       </header>
       <main className="flex flex-col justify-between h-screen p-8 bg-[#fffffe]">
         {/* Header Section */}
-        <section className="flex justify-between items-start">
-          <h1 className="text-4xl font-bold">Invoice</h1>
+        <section className="grid grid-cols-[1fr,auto,1fr] gap-8">
+          <div></div>
+          <h1 className="text-7xl font-bold" style={loveYaLikeASister.style}>
+            Invoice
+          </h1>
 
-          <div className="text-right">
+          <div className="text-center text-xs bg-purple-200 rounded-full w-24 h-24 flex items-center">
             <p>Your logo here!</p>
-            <p>(No logo? Feel free to delete me!)</p>
           </div>
         </section>
 

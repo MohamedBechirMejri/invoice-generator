@@ -63,7 +63,7 @@ export default function Home() {
         </section>
 
         {/* Description Section */}
-        <section className="py-6">
+        <section className="pt-6">
           <h3 className="text-lg font-bold flex justify-between">
             <span>DESCRIPTION OF ITEM</span> <span>PRICE</span>
           </h3>
@@ -80,14 +80,13 @@ export default function Home() {
             <p>1 Newsletter Shout Out</p>
             <p>$350</p>
           </div>
+          <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-1 rounded mt-2" />
         </section>
 
         {/* Total Amount Section */}
-        <section className="my-6">
-          <div className="flex justify-between">
-            <h2 className="text-lg font-bold">TOTAL AMOUNT DUE</h2>
-            <p>$2,000</p>
-          </div>
+        <section className="flex justify-between -mt-4">
+          <h2 className="text-lg font-bold">TOTAL AMOUNT DUE</h2>
+          <p>$2,000</p>
         </section>
 
         {/* Payment Details Section */}

@@ -23,7 +23,7 @@ export default function Home() {
       className="grid grid-cols-[7rem,35rem] h-max border w-max"
       style={firaCode.style}
     >
-      <header className="relative bg-gradient-to-tl from-pink-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
+      <header className="relative bg-gradient-to-tl from-green-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
         <div className="min-w-max -rotate-90 font-semibold text-base text-right">
           <p>NO. 123</p>
           <p>Issued on September 1, 2021</p>
@@ -41,7 +41,7 @@ export default function Home() {
             Invoice
           </h1>
 
-          <div className="text-center text-xs bg-purple-200 rounded-full w-24 h-24 flex items-center">
+          <div className="text-center text-xs bg-blue-200 rounded-full w-24 h-24 flex items-center">
             <p>Your logo here!</p>
           </div>
         </section>

@@ -251,15 +251,32 @@ export default function Home() {
         />
 
         {/* Items List Input */}
-        {/* This input requires a bit more complex handling due to the nature of the items being an array */}
-        {/* You might want to add functionalities to add/remove/edit items in the list */}
-        {/* For simplicity, a basic input field is provided here */}
-        <Input
-          label="Items (JSON Format)"
-          value={JSON.stringify(items)}
-          onChange={e => setItems(JSON.parse(e.target.value))}
-          placeholder='[{"item": "Service/Product", "price": "Price"}]'
-        />
+        <div>
+          {items.map((item, i) => (
+            <div key={i} className="flex justify-between">
+              <Input
+                label="Item"
+                value={item.item}
+                onChange={e => {
+                  const newItems = [...items];
+                  newItems[i].item = e.target.value;
+                  setItems(newItems);
+                }}
+                placeholder="Item"
+              />
+              <Input
+                label="Price"
+                value={item.price}
+                onChange={e => {
+                  const newItems = [...items];
+                  newItems[i].price = e.target.value;
+                  setItems(newItems);
+                }}
+                placeholder="Price"
+              />
+            </div>
+          ))}
+        </div>
 
         {/* Bank Name Input */}
         <Input

@@ -8,9 +8,10 @@ import {
   Love_Ya_Like_A_Sister,
 } from "next/font/google";
 import Image from "next/image";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import Input from "~/app/_ui/Input";
 import { formatDateStringMDY } from "~/lib/date";
+import { div2png } from "~/lib/div2png";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -24,6 +25,8 @@ const loveYaLikeASister = Love_Ya_Like_A_Sister({
 });
 
 export default function Home() {
+  const invoiceRef = useRef<HTMLDivElement>(null);
+
   const [number, setNumber] = useState(123);
   const [date, setDate] = useState("September 1, 2021");
   const [logo, setLogo] = useState(
@@ -71,6 +74,7 @@ export default function Home() {
       <div
         className="grid grid-cols-[7rem,35rem] h-max border w-max"
         style={firaCode.style}
+        ref={invoiceRef}
       >
         <header className="relative bg-gradient-to-tl from-green-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
           <div className="min-w-max -rotate-90 font-semibold text-base text-right">
@@ -297,6 +301,16 @@ export default function Home() {
           placeholder="Due Date"
           type="date"
         />
+
+        <button
+          onClick={() => {
+            const invoice = invoiceRef.current;
+            if (!invoice) return;
+            div2png(invoice, number);
+          }}
+        >
+          Save
+        </button>
       </div>
     </div>
   );

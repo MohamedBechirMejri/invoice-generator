@@ -1,8 +1,7 @@
-import html2canvas from "html2canvas";
+import { toPng } from "html-to-image";
 
 export const div2png = (div: HTMLElement, number: number) => {
-  html2canvas(div).then(canvas => {
-    const img = canvas.toDataURL("image/png");
+  toPng(div).then(img => {
     const link = document.createElement("a");
     link.href = img;
     link.download = `invoice#${number}.png`;

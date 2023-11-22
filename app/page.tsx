@@ -249,14 +249,6 @@ export default function Home() {
           placeholder='[{"item": "Service/Product", "price": "Price"}]'
         />
 
-        {/* Total Amount Input */}
-        <Input
-          label="Total Amount"
-          value={total}
-          onChange={e => setTotal(e.target.value)}
-          placeholder="Total Amount"
-        />
-
         {/* Bank Name Input */}
         <Input
           label="Bank Name"

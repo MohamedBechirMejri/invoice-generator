@@ -147,7 +147,7 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 w-max h-[80svh] m-auto border shadow p-4 rounded place-items-center">
+      <div className="grid grid-cols-3 gap-4 w-max h-[80svh] my-auto border shadow p-4 rounded place-items-center">
         <Input
           label="Number"
           value={number.toString()}

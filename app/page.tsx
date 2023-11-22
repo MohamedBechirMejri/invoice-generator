@@ -1,3 +1,5 @@
+"use client";
+
 // TODO: allow user to tweak positions
 
 import {
@@ -5,6 +7,7 @@ import {
   Puppies_Play,
   Love_Ya_Like_A_Sister,
 } from "next/font/google";
+import { useState } from "react";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -18,6 +21,25 @@ const loveYaLikeASister = Love_Ya_Like_A_Sister({
 });
 
 export default function Home() {
+  const [logo, setLogo] = useState(null);
+  const [name, setName] = useState("Mr. Client");
+  const [phone, setPhone] = useState("(123) 456-7890");
+  const [email, setEmail] = useState("email@example.com");
+  const [address, setAddress] = useState(
+    "100 Fifth Avenue, New York, NY 10023"
+  );
+  const [items, setItems] = useState([
+    { item: "1 IGTV Video", price: "$1,000" },
+    { item: "3 Instagram Stories", price: "$650" },
+    { item: "1 Newsletter Shout Out", price: "$350" },
+  ]);
+  const [total, setTotal] = useState("$2,000");
+  const [bank, setBank] = useState("Best Bank");
+  const [accountName, setAccountName] = useState("Content Creator Inc.");
+  const [accountNumber, setAccountNumber] = useState("123456789");
+  const [routingNumber, setRoutingNumber] = useState("987654321");
+  const [dueDate, setDueDate] = useState("OCTOBER 1, 2021");
+
   return (
     <div
       className="grid grid-cols-[7rem,35rem] h-max border w-max"
@@ -55,11 +77,11 @@ export default function Home() {
         <section className="my-4 text-xs">
           <h2 className="text-lg font-semibold mb-2">BILLED TO</h2>
           <p className="font-semibold text-3xl uppercase tracking-wider">
-            Mrs. Client
+            {name}
           </p>
-          <p>(123) 456-7890</p>
-          <p>client@mail.com</p>
-          <p>100 Fifth Avenue, New York, NY 10023</p>
+          <p>{phone}</p>
+          <p>{email}</p>
+          <p>{address}</p>
         </section>
 
         {/* Description Section */}
@@ -68,39 +90,33 @@ export default function Home() {
             <span>DESCRIPTION OF ITEM</span> <span>PRICE</span>
           </h3>
           <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-1 rounded my-2" />
-          <div className="flex justify-between">
-            <p>1 IGTV Video</p>
-            <p>$1,000</p>
-          </div>
-          <div className="flex justify-between">
-            <p>3 Instagram Stories</p>
-            <p>$650</p>
-          </div>
-          <div className="flex justify-between">
-            <p>1 Newsletter Shout Out</p>
-            <p>$350</p>
-          </div>
+          {items.map(item => (
+            <div key={item.item} className="flex justify-between">
+              <p>{item.item}</p>
+              <p>{item.price}</p>
+            </div>
+          ))}
           <hr className="bg-gradient-to-tl from-green-200 to-blue-200 h-1 rounded mt-2" />
         </section>
 
         {/* Total Amount Section */}
         <section className="flex justify-between -mt-4">
           <h2 className="text-lg font-bold">TOTAL AMOUNT DUE</h2>
-          <p>$2,000</p>
+          <p>{total}</p>
         </section>
 
         {/* Payment Details Section */}
         <section className="my-6">
           <h2 className="text-lg font-bold">PAYMENT DETAILS</h2>
-          <p>Content Creator Inc.</p>
-          <p>Best Bank</p>
-          <p>Account Number: 123456789</p>
-          <p>Routing Number: 987654321</p>
+          <p>{accountName}</p>
+          <p>{bank}</p>
+          <p>Account Number: {accountNumber}</p>
+          <p>Routing Number: {routingNumber}</p>
         </section>
 
         {/* Footer Section */}
         <footer className="text-center flex items-center justify-between w-full">
-          <p className="font-medium">*DUE BY OCTOBER 1, 2021</p>
+          <p className="font-medium">*DUE BY {dueDate}</p>
           <p style={puppiesPlay.style} className="text-7xl">
             Thank you!
           </p>

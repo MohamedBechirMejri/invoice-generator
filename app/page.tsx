@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { ChangeEvent, useState } from "react";
 import Input from "~/app/_ui/Input";
+import { formatDateStringMDY } from "~/lib/date";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -48,6 +49,14 @@ export default function Home() {
   const [accountNumber, setAccountNumber] = useState("123456789");
   const [routingNumber, setRoutingNumber] = useState("987654321");
   const [dueDate, setDueDate] = useState("OCTOBER 1, 2021");
+
+  const handleDateChange = (
+    e: ChangeEvent<HTMLInputElement>,
+    setDate: (date: string) => void
+  ) => {
+    const date = formatDateStringMDY(e.target.value);
+    setDate(date);
+  };
 
   return (
     <div className="grid grid-cols-[auto,1fr] gap-4">
@@ -160,7 +169,7 @@ export default function Home() {
         <Input
           label="Date"
           value={date}
-          onChange={e => setDate(e.target.value)}
+          onChange={e => handleDateChange(e, setDate)}
           placeholder="Issue Date"
           type="date"
         />
@@ -284,7 +293,7 @@ export default function Home() {
         <Input
           label="Due Date"
           value={dueDate}
-          onChange={e => setDueDate(e.target.value)}
+          onChange={e => handleDateChange(e, setDueDate)}
           placeholder="Due Date"
           type="date"
         />

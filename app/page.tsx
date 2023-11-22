@@ -28,10 +28,12 @@ export default function Home() {
     "https://avatars.githubusercontent.com/u/76930306?v=4"
   );
   const [website, setWebsite] = useState("www.content.com");
-  const [name, setName] = useState("Mr. Client");
   const [phone, setPhone] = useState("(123) 456-7890");
-  const [email, setEmail] = useState("email@example.com");
-  const [address, setAddress] = useState(
+  const [address, setAddress] = useState("500 Main Street, Brooklyn, NY 11211");
+  const [cname, setCName] = useState("Mr. Client");
+  const [cphone, setCPhone] = useState("(123) 456-7890");
+  const [cemail, setcEmail] = useState("email@example.com");
+  const [caddress, setCAddress] = useState(
     "100 Fifth Avenue, New York, NY 10023"
   );
   const [items, setItems] = useState([
@@ -57,8 +59,10 @@ export default function Home() {
           <p>Issued on {date}</p>
         </div>
         <div className="min-w-max -rotate-90 font-[400] text-base uppercase">
-          <p>www.content.com • (123) 456-7890</p>
-          <p>500 main street, brooklym, NY 11211</p>
+          <p>
+            {website} • {phone}
+          </p>
+          <p>{address}</p>
         </div>
       </header>
       <main className="flex flex-col justify-between min-h-screen p-8 bg-[#fffffe]">
@@ -94,11 +98,11 @@ export default function Home() {
         <section className="my-4 text-xs">
           <h2 className="text-lg font-semibold mb-2">BILLED TO</h2>
           <p className="font-semibold text-3xl uppercase tracking-wider">
-            {name}
+            {cname}
           </p>
-          <p>{phone}</p>
-          <p>{email}</p>
-          <p>{address}</p>
+          <p>{cphone}</p>
+          <p>{cemail}</p>
+          <p>{caddress}</p>
         </section>
 
         {/* Description Section */}

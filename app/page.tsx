@@ -8,7 +8,8 @@ import {
   Love_Ya_Like_A_Sister,
 } from "next/font/google";
 import Image from "next/image";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import Input from "~/app/_ui/Input";
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
@@ -144,6 +145,148 @@ export default function Home() {
             </p>
           </footer>
         </main>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 w-max h-[80svh] m-auto border shadow p-4 rounded place-items-center">
+        <Input
+          label="Number"
+          value={number.toString()}
+          onChange={e => setNumber(+e.target.value)}
+          placeholder="Number"
+          type="number"
+        />
+        {/* Date Input */}
+        <Input
+          label="Date"
+          value={date}
+          onChange={e => setDate(e.target.value)}
+          placeholder="Issue Date"
+          type="date"
+        />
+
+        {/* Logo URL Input */}
+        <Input
+          label="Logo URL"
+          value={logo}
+          onChange={e => setLogo(e.target.value)}
+          placeholder="https://example.com/logo.png"
+        />
+
+        {/* Website Input */}
+        <Input
+          label="Website"
+          value={website}
+          onChange={e => setWebsite(e.target.value)}
+          placeholder="Your Website"
+        />
+
+        {/* Phone Input */}
+        <Input
+          label="Phone"
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          placeholder="Phone Number"
+        />
+
+        {/* Address Input */}
+        <Input
+          label="Address"
+          value={address}
+          onChange={e => setAddress(e.target.value)}
+          placeholder="Your Address"
+        />
+
+        {/* Client Name Input */}
+        <Input
+          label="Client Name"
+          value={cname}
+          onChange={e => setCName(e.target.value)}
+          placeholder="Client Name"
+        />
+
+        {/* Client Phone Input */}
+        <Input
+          label="Client Phone"
+          value={cphone}
+          onChange={e => setCPhone(e.target.value)}
+          placeholder="Client Phone Number"
+        />
+
+        {/* Client Email Input */}
+        <Input
+          label="Client Email"
+          value={cemail}
+          onChange={e => setcEmail(e.target.value)}
+          placeholder="Client Email"
+        />
+
+        {/* Client Address Input */}
+        <Input
+          label="Client Address"
+          value={caddress}
+          onChange={e => setCAddress(e.target.value)}
+          placeholder="Client Address"
+        />
+
+        {/* Items List Input */}
+        {/* This input requires a bit more complex handling due to the nature of the items being an array */}
+        {/* You might want to add functionalities to add/remove/edit items in the list */}
+        {/* For simplicity, a basic input field is provided here */}
+        <Input
+          label="Items (JSON Format)"
+          value={JSON.stringify(items)}
+          onChange={e => setItems(JSON.parse(e.target.value))}
+          placeholder='[{"item": "Service/Product", "price": "Price"}]'
+        />
+
+        {/* Total Amount Input */}
+        <Input
+          label="Total Amount"
+          value={total}
+          onChange={e => setTotal(e.target.value)}
+          placeholder="Total Amount"
+        />
+
+        {/* Bank Name Input */}
+        <Input
+          label="Bank Name"
+          value={bank}
+          onChange={e => setBank(e.target.value)}
+          placeholder="Bank Name"
+        />
+
+        {/* Account Name Input */}
+        <Input
+          label="Account Name"
+          value={accountName}
+          onChange={e => setAccountName(e.target.value)}
+          placeholder="Account Holder's Name"
+        />
+
+        {/* Account Number Input */}
+        <Input
+          label="Account Number"
+          value={accountNumber}
+          onChange={e => setAccountNumber(e.target.value)}
+          placeholder="Account Number"
+        />
+
+        {/* Routing Number Input */}
+        <Input
+          label="Routing Number"
+          value={routingNumber}
+          onChange={e => setRoutingNumber(e.target.value)}
+          placeholder="Routing Number"
+        />
+
+        {/* Due Date Input */}
+        <Input
+          label="Due Date"
+          value={dueDate}
+          onChange={e => setDueDate(e.target.value)}
+          placeholder="Due Date"
+          type="date"
+        />
       </div>
     </div>
   );

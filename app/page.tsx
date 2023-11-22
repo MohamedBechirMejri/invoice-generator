@@ -22,9 +22,12 @@ const loveYaLikeASister = Love_Ya_Like_A_Sister({
 });
 
 export default function Home() {
+  const [number, setNumber] = useState(123);
+  const [date, setDate] = useState("September 1, 2021");
   const [logo, setLogo] = useState(
     "https://avatars.githubusercontent.com/u/76930306?v=4"
   );
+  const [website, setWebsite] = useState("www.content.com");
   const [name, setName] = useState("Mr. Client");
   const [phone, setPhone] = useState("(123) 456-7890");
   const [email, setEmail] = useState("email@example.com");
@@ -50,8 +53,8 @@ export default function Home() {
     >
       <header className="relative bg-gradient-to-tl from-green-200 to-blue-200 grid grid-rows-2 grid-cols-1 place-items-center w-[7rem]">
         <div className="min-w-max -rotate-90 font-semibold text-base text-right">
-          <p>NO. 123</p>
-          <p>Issued on September 1, 2021</p>
+          <p>NO. {number}</p>
+          <p>Issued on {date}</p>
         </div>
         <div className="min-w-max -rotate-90 font-[400] text-base uppercase">
           <p>www.content.com • (123) 456-7890</p>
@@ -61,6 +64,7 @@ export default function Home() {
       <main className="flex flex-col justify-between min-h-screen p-8 bg-[#fffffe]">
         {/* Header Section */}
         <section className="grid grid-cols-[1fr,auto,1fr] gap-8">
+          {/* keep this div */}
           <div></div>
           <h1
             className="text-7xl font-bold mt-8"

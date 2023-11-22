@@ -133,8 +133,8 @@ export default function Home() {
             <h2 className="text-lg font-bold">PAYMENT DETAILS</h2>
             <p>{accountName}</p>
             <p>{bank}</p>
-            <p>Account Number: {accountNumber}</p>
-            <p>Routing Number: {routingNumber}</p>
+            {accountNumber && <p>Account Number: {accountNumber}</p>}
+            {routingNumber && <p>Routing Number: {routingNumber}</p>}
           </section>
 
           {/* Footer Section */}

@@ -8,7 +8,7 @@ import {
   Love_Ya_Like_A_Sister,
 } from "next/font/google";
 import Image from "next/image";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import Input from "~/app/_ui/Input";
 import { formatDateStringMDY } from "~/lib/date";
 
@@ -43,7 +43,7 @@ export default function Home() {
     { item: "3 Instagram Stories", price: "$650" },
     { item: "1 Newsletter Shout Out", price: "$350" },
   ]);
-  const [total, setTotal] = useState("$2,000");
+  const [total, setTotal] = useState("$0");
   const [bank, setBank] = useState("Best Bank");
   const [accountName, setAccountName] = useState("Content Creator Inc.");
   const [accountNumber, setAccountNumber] = useState("123456789");
@@ -57,6 +57,14 @@ export default function Home() {
     const date = formatDateStringMDY(e.target.value);
     setDate(date);
   };
+
+  useEffect(() => {
+    const total = items.reduce((acc, item) => {
+      const price = item.price.replace(/[^0-9.]/g, "");
+      return acc + +price;
+    }, 0);
+    setTotal(`$${total}`);
+  }, [items]);
 
   return (
     <div className="grid grid-cols-[auto,1fr] gap-4">

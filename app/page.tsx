@@ -131,8 +131,8 @@ export default function Home() {
           {/* Payment Details Section */}
           <section className="my-6">
             <h2 className="text-lg font-bold">PAYMENT DETAILS</h2>
-            <p>{accountName}</p>
-            <p>{bank}</p>
+            {accountName && <p>{accountName}</p>}
+            {bank && <p>{bank}</p>}
             {accountNumber && <p>Account Number: {accountNumber}</p>}
             {routingNumber && <p>Routing Number: {routingNumber}</p>}
           </section>

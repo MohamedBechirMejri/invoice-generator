@@ -7,6 +7,7 @@ import {
   Puppies_Play,
   Love_Ya_Like_A_Sister,
 } from "next/font/google";
+import Image from "next/image";
 import { useState } from "react";
 
 const firaCode = Fira_Code({
@@ -67,7 +68,15 @@ export default function Home() {
           </h1>
 
           <div className="text-center text-xs bg-gradient-to-tl from-green-200 to-blue-200 rounded-full w-24 h-24 flex items-center">
-            <p>Your logo here!</p>
+            {logo ? (
+              <Image
+                src={logo}
+                alt="logo"
+                className="w-full h-full object-contain"
+              />
+            ) : (
+              <p>Your logo here!</p>
+            )}
           </div>
         </section>
 

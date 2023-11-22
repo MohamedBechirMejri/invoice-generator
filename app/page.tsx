@@ -22,7 +22,9 @@ const loveYaLikeASister = Love_Ya_Like_A_Sister({
 });
 
 export default function Home() {
-  const [logo, setLogo] = useState(null);
+  const [logo, setLogo] = useState(
+    "https://avatars.githubusercontent.com/u/76930306?v=4"
+  );
   const [name, setName] = useState("Mr. Client");
   const [phone, setPhone] = useState("(123) 456-7890");
   const [email, setEmail] = useState("email@example.com");
@@ -67,12 +69,14 @@ export default function Home() {
             Invoice
           </h1>
 
-          <div className="text-center text-xs bg-gradient-to-tl from-green-200 to-blue-200 rounded-full w-24 h-24 flex items-center">
+          <div className="text-center text-xs bg-gradient-to-tl from-green-200 to-blue-200 rounded-full w-24 h-24 flex items-center overflow-hidden">
             {logo ? (
               <Image
                 src={logo}
                 alt="logo"
                 className="w-full h-full object-contain"
+                width={96}
+                height={96}
               />
             ) : (
               <p>Your logo here!</p>

@@ -148,6 +148,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-3 gap-4 w-max h-[80svh] my-auto border shadow p-4 rounded place-items-center">
+        {/* Number Input */}
         <Input
           label="Number"
           value={number.toString()}
